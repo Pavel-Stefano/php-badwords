@@ -5,7 +5,8 @@ $stringa = 'Benvenuto developers affrontiamo il back-end, ma non scordiamoci il 
 if(isset($_GET['censured'])){
     $parola_censurata = $_GET['censured'];
 }else {
-    $parola_censurata = 'inserisci una parola che sia contenuta nel testo';
+    $parola_censurata = '';
+    $stringa = 'inserisci una parola che sia contenuta nel testo';
 };
 
 ?>
@@ -25,6 +26,7 @@ if(isset($_GET['censured'])){
 
     <h3>titolo modificato</h3>
     <p><?php echo $stringa_modificata = str_replace($parola_censurata, '***', $stringa) ?></p>
+    <p><?php echo strlen($stringa_modificata) ?></p>
     
 </body>
 </html>
